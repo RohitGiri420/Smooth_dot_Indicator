@@ -3,6 +3,7 @@ import 'package:smooth_dot_indicator/Pages/Page1.dart';
 import 'package:smooth_dot_indicator/Pages/Page3.dart';
 import 'package:smooth_dot_indicator/Pages/Page4.dart';
 import 'package:smooth_dot_indicator/Pages/page2.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
@@ -12,12 +13,12 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-
   final _controller = PageController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.deepPurple.shade200,
+      backgroundColor: Color(0xffe3e3e3),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -25,14 +26,29 @@ class _HomepageState extends State<Homepage> {
             height: 400,
             child: PageView(
               controller: _controller,
-              children: [
-                Page1(),
-                Page2(),
-                Page3(),
-                Page4()
-              ],
+              children: [Page1(), Page2(), Page3(), Page4()],
             ),
           ),
+          SmoothPageIndicator(
+            controller: _controller,
+            count: 4,
+
+
+
+            // Swap Effect
+            // effect: SwapEffect(),
+
+            // Worm E
+            // effect: WormEffect(),
+
+            // Jumping effect...................
+
+            effect: JumpingDotEffect(
+              activeDotColor: Colors.deepPurple,
+              dotColor: Colors.black38,
+
+            ),
+          )
         ],
       ),
     );

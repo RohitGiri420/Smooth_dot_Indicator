@@ -13,7 +13,7 @@ class Page2 extends StatelessWidget {
           child: Container(
             height: 400,
             width: 250,
-            color: Colors.deepPurple,
+            color: Color(0xffd1505a),
           ),
         ),
       ),
