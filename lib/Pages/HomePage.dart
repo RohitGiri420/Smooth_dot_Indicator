@@ -43,8 +43,8 @@ class _HomepageState extends State<Homepage> {
 
             // Jumping effect...................
 
-            effect: JumpingDotEffect(
-              activeDotColor: Colors.deepPurple,
+            effect: ExpandingDotsEffect(
+              activeDotColor: Color(0xffd1505a),
               dotColor: Colors.black38,
 
             ),
